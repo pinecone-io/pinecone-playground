@@ -1,6 +1,7 @@
 # Pinecone Playground
 
-This is a companion app for Pinecone's [documentation](https://www.pinecone.io/docs/manage-index/).
+Pinecone Playground is a companion app for the [Pinecone docs](https://www.pinecone.io/docs). It is an interactive web app that lets you run Pinecone without writing any code.
+
 Get started with Pinecone at [pinecone.io/start](https://www.pinecone.io/start/)
 and receive your API key.
 
