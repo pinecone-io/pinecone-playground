@@ -1,12 +1,15 @@
 # Pinecone Playground
 
-This is a companion app for Pinecone's [documentation](https://www.pinecone.io/docs/manage-index/).
+Pinecone Playground is a companion app for the [Pinecone docs](https://www.pinecone.io/docs). It is an interactive web app that lets you run Pinecone without writing any code.
+
 Get started with Pinecone at [pinecone.io/start](https://www.pinecone.io/start/)
 and receive your API key.
 
 ## Get started
 
 Make sure that your Python version is `>=3.6`.
+We highly recommend that you use a Python virtual environment.
+
 
 Clone the repository.
 
@@ -18,18 +21,15 @@ cd pinecone-playground
 Install dependencies.
 
 ```
-python3 -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Start server.
+Start the server.
 
 ```
-# Activate the virtual environment if it is not active.
-source venv/bin/activate
-
 python server.py
 ```
+
+A new web app should open in your default browser.
 
 ![Pinecone Playground](pinecone-playground.png)
