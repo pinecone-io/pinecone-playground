@@ -1,6 +1,5 @@
 streamlit
-watchdog
-ujson
 pinecone-client
 pandas
 dataclasses
+watchdog
