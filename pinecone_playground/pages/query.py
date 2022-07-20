@@ -107,9 +107,9 @@ class PageQuery(Page):
             """
             st.markdown(description)
 
-            self.cmp_input_index_name(st.beta_container())
+            self.cmp_input_index_name(st.container())
 
-            self.cmp_code_validate_index(st.beta_container())
+            self.cmp_code_validate_index(st.container())
             if st.button("Run", key="validate index"):
                 index_name = self.app.store.pinecone.index_name
                 if index_name not in pinecone.list_indexes():
@@ -126,8 +126,8 @@ class PageQuery(Page):
             """
             st.markdown(description)
 
-            self.cmp_input_ids(st.beta_container())
-            self.cmp_code_fetch(st.beta_container())
+            self.cmp_input_ids(st.container())
+            self.cmp_code_fetch(st.container())
             if st.button("Run", key="fetch"):
                 ids = self._get_ids(self.app.store.fetch_ids)
                 result = []
@@ -151,13 +151,13 @@ class PageQuery(Page):
             """
             st.markdown(description)
 
-            self.cmp_input_query(st.beta_container())
+            self.cmp_input_query(st.container())
 
-            with st.beta_container():
-                cols = st.beta_columns(2)
+            with st.container():
+                cols = st.columns(2)
                 self.cmp_input_topk(cols[0])
 
-            self.cmp_code_query(st.beta_container())
+            self.cmp_code_query(st.container())
             if st.button("Run", key="query"):
                 query_vector = self.app.store.query_vector
                 query_topk = self.app.store.query_topk
@@ -169,6 +169,6 @@ class PageQuery(Page):
 
     def render(self):
         st.header(self.title)
-        self.render_validate_index(st.beta_container())
-        self.render_fetch(st.beta_container())
-        self.render_query(st.beta_container())
+        self.render_validate_index(st.container())
+        self.render_fetch(st.container())
+        self.render_query(st.container())

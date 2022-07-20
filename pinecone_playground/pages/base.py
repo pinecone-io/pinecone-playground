@@ -1,7 +1,7 @@
-from typing import Any
 import abc
-from ..store import AppStore
+
 from ..effect import AppEffect
+from ..store import AppStore
 
 
 class App:
