@@ -1,10 +1,10 @@
+import sys
 from contextlib import contextmanager
 from io import StringIO
-from streamlit.report_thread import REPORT_CONTEXT_ATTR_NAME
 from threading import current_thread
+
 import streamlit as st
-import sys
-import pinecone
+from streamlit.scriptrunner import get_script_run_ctx
 
 
 @contextmanager
@@ -22,7 +22,8 @@ def streamlit_redirect(widget_name, source, persist=False):
         def new_writer(buf):
             """Writes to old and new source."""
             # widget writer
-            if getattr(current_thread(), REPORT_CONTEXT_ATTR_NAME, None):
+            if getattr(current_thread(), 'REPORT_CONTEXT_ATTR_NAME', None):
+                print("here")
                 buffer.write(buf)
                 widget(buf)
             # old writer

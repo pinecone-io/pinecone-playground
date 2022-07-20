@@ -8,6 +8,7 @@ _store = None
 class PineconeStore:
     api_key = ""
     index_name = ""
+    dimension = 128
     index = None  # cache a pinecone.Index() instance
 
 

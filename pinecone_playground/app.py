@@ -1,11 +1,8 @@
 from collections import OrderedDict
+
 import streamlit as st
-import pinecone
 
-from . import store
-from . import pages
-from . import effect
-
+from . import effect, pages, store
 
 PAGES = OrderedDict([(page.title, (page,)) for page in [pages.PageManage, pages.PageUpload, pages.PageQuery]])
 
@@ -26,7 +23,7 @@ class App:
 
         cmp.markdown("------")
 
-        with cmp.beta_container():
+        with cmp.container():
             # Eneter api key and initialize pinecone
             api_key = self.store.pinecone.api_key
             api_key = st.text_input("Pinecone API key", value=api_key, type="password")
@@ -44,7 +41,7 @@ class App:
             st.text("")
             st.markdown(
                 """
-            Visit [pinecone.io/start](https://www.pinecone.io/start/) to receive a Pinecone API key.
+            Visit [pinecone.io/start](https://www.pinecone.io/start/) to get an API key.
             """
             )
 

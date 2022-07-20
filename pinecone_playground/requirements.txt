@@ -1,6 +1,0 @@
-streamlit~=0.80.0
-watchdog~=2.0.3
-ujson~=4.0.2
-pinecone-client>=0.8.53
-pandas
-dataclasses; python_version < '3.7'

@@ -111,7 +111,7 @@ class PageUpload(Page):
         with container:
             upload_file = self.app.store.upload_file
             upload_path_cmp = ComponentFilePath(
-                container.beta_container(),
+                container.container(),
                 label="Enter the path of a Parquet or a CSV file",
                 file_path=upload_file,
                 extensions=["csv", "parquet"],
@@ -201,9 +201,9 @@ class PageUpload(Page):
             """
             st.markdown(description)
 
-            self.cmp_input_index_name(st.beta_container())
+            self.cmp_input_index_name(st.container())
 
-            self.cmp_code_create_index(st.beta_container())
+            self.cmp_code_create_index(st.container())
             if st.button("Run", key="create index"):
                 index_name = self.app.store.pinecone.index_name
                 if index_name in pinecone.list_indexes():
@@ -260,17 +260,17 @@ class PageUpload(Page):
             """
             st.markdown(description)
 
-            self.cmp_upload_file_path(st.beta_container())
+            self.cmp_upload_file_path(st.container())
 
             if st.button("Preview"):
-                self.cmp_preview_data(st.beta_container())
+                self.cmp_preview_data(st.container())
 
-            with st.beta_container():
-                left, right, _ = st.beta_columns(3)
+            with st.container():
+                left, right, _ = st.columns(3)
                 self.cmp_input_id_col(left)
                 self.cmp_input_vector_col(right)
 
-            self.cmp_code_upload(st.beta_container())
+            self.cmp_code_upload(st.container())
 
             if st.button("Run"):
                 with st.spinner("Uploading..."):
@@ -281,6 +281,6 @@ class PageUpload(Page):
 
     def render(self):
         st.header(self.title)
-        self.render_save_data(st.beta_container())
-        self.render_create_index(st.beta_container())
-        self.render_upload_data(st.beta_container())
+        self.render_save_data(st.container())
+        self.render_create_index(st.container())
+        self.render_upload_data(st.container())
